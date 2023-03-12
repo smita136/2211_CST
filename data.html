@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>Form Details</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                background-image: url('bg1.jpg');
+                background-repeat: no-repeat;
+                background-position: center;
+                background-attachment: fixed;
+                background-size: cover;
+            }
+            .rect1 {
+                height: auto;
+                width: 40%;
+                background-color: whitesmoke;
+                margin-left: 32%;
+                margin-top: 10%;
+                padding-bottom: 2%;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="rect1" style=" font-size: 18px;  color: rgb(32, 7, 63); text-align: center; padding-top: 2%; font-family: cursive;">
+            <div style="font-size: 22px; color: black; margin: 0 auto; font-weight: bold; text-decoration: underline; padding-bottom: 1%;">Student Details</div>
+            First Name : <span id="d1" style="font-weight: bold; text-decoration: underline;">First Name</span><br> 
+            Middle Name :  <span id="d2" style="font-weight: bold; text-decoration: underline;">Middle Name</span><br>
+            Last Name : <span id="d3" style="font-weight: bold; text-decoration: underline;">Last Name</span><br>
+            Address : <span id="d4" style="font-weight: bold; text-decoration: underline;">Address</span><br>
+            Date Of Birth : <span id="d5" style="font-weight: bold; text-decoration: underline;">Date Of Birth</span><br>
+            Gender : <span id="d12" style="font-weight: bold; text-decoration: underline;">Gender</span><br>
+            Email : <span id="d6" style="font-weight: bold; text-decoration: underline;">Email</span><br>
+            Mobile Number : <span id="d7" style="font-weight: bold; text-decoration: underline;">Mobile Number</span><br>
+            Degree Program : <span id="d8" style="font-weight: bold; text-decoration: underline;">Degree Program</span><br>
+            Semester : <span id="d9" style="font-weight: bold; text-decoration: underline;">Semester</span><br>
+            Student Photo : <span id="d10" style="font-weight: bold; text-decoration: underline;">Student Photo</span><br>
+            Signature : <span id="d11" style="font-weight: bold; text-decoration: underline;">Signature</span><br>
+        </div>
+        <script>
+            document.getElementById("d1").innerHTML=localStorage.getItem("v1");
+            document.getElementById("d2").innerHTML=localStorage.getItem("v2");
+            document.getElementById("d3").innerHTML=localStorage.getItem("v3");
+            document.getElementById("d4").innerHTML=localStorage.getItem("v4");
+            document.getElementById("d5").innerHTML=localStorage.getItem("v5");
+            document.getElementById("d6").innerHTML=localStorage.getItem("v6");
+            document.getElementById("d7").innerHTML=localStorage.getItem("v7");
+            document.getElementById("d8").innerHTML=localStorage.getItem("v8");
+            document.getElementById("d9").innerHTML=localStorage.getItem("v9");
+            document.getElementById("d10").innerHTML=localStorage.getItem("v10");
+            document.getElementById("d11").innerHTML=localStorage.getItem("v11");
+            document.getElementById("d12").innerHTML=localStorage.getItem("v12");
+        </script>
+        
+    </body>
+</html>

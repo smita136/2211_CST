@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>Registration Form</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                font-family: serif;
+                font-weight: 900;
+                font-size: 1em;
+                color: white;
+                background-image: url('https://www.zephyrproject.org/wp-content/uploads/sites/38/2019/10/learn-header.png');
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+                margin-left: 1%;
+                margin-right: 1%;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 style="text-align: center; font-family: algerian; color: cyan; text-decoration: underline;">STUDENT REGISTRATION FORM</h1>
+        <form action="data.html" id="myForm">
+        <section>
+            <h3 style="text-decoration: underline; font-size: 1.3em;">Personal Information</h3><hr>
+                <label for="fname">Full Name:</label><br>
+                <input style="width: 20%; height: 25px; margin-right: 1%; margin-top: 0.5%; margin-bottom: 1%;" type="text" id="fname" name="fname" placeholder="First Name" required>
+                <input style="width: 20%; height: 25px; margin-right: 1%; margin-top: 0.5%; margin-bottom: 1%;" type="text" id="mname" name="mname" placeholder="Middle Name" required>
+                <input style="width: 20%; height: 25px; margin-top: 0.5%; margin-bottom: 1%;" type="text" id="lname" name="lname" placeholder="Surname" required><br>
+                
+                <label for="fname">Address</label><br>
+                <input style="width: 64%; height: 25px; margin-top: 0.5%;" type="text" id="addr" name="addr" required><br>
+                
+                <label style="margin-top: 1%;" for="birthday">Date of Birth : </label>
+                <input style="width: 10%; height: 25px; margin-left: 1%; margin-top: 1%;" type="date" id="birthday" name="birthday" required>
+                
+                <label style="margin-top: 1%; margin-left: 15%;" for="birthday">Gender : </label>                
+                <input style="margin-top: 1%; margin-left: 1%;" type="radio" id="male" name="gender" value="Male" required>
+                <label style="margin-top: 1%;" for="male">Male</label>
+                <input style="margin-top: 1%; margin-left: 1%;" type="radio" id="female" name="gender" value="Female" required>
+                <label style="margin-top: 1%;" for="female">Female</label>
+                <input style="margin-top: 1%; margin-left: 1%;" type="radio" id="others" name="gender" value="Others" required>
+                <label style="margin-top: 1%;" for="others">Others</label><br>
+                
+                <label style="margin-top: 1%;" for="email">Email:</label>
+                <input style="width: 20%; height: 25px; margin-left: 1%; margin-top: 1%;" type="email" id="email" name="email" required>
+                
+                <label style="margin-top: 1%; margin-left: 9%;" for="phone">Mobile Number:</label>
+                <input style="width: 20%; height: 25px; margin-left: 1%; margin-top: 1%;" type="tel" id="phone" name="phone" maxlength="10" pattern="[0-9]{10}" required>
+        </section>
+        <br><br>
+        <section>
+            <h3 style="text-decoration: underline;">Programme Details</h3><hr>
+                <label for="pg">Degree Programme : </label>
+                <select id="pg" name="pg" style="width: 10%; height: 30px; margin-left: 1%;" required>
+                    <option value="">Select</option>
+                    <option value="MCA">MCA</option>
+                    <option value="MSc Int">MSc Int</option>
+                </select><br>
+                
+                <label style="margin-top: 1%;" for="sm">Semester : </label>
+                <select id="sm" name="sm" style="margin-top: 1%; width: 10%; height: 30px; margin-left: 1%;" required>
+                    <option value="">Select</option>
+                    <option value="I">I</option>
+                    <option value="II">II</option>
+                    <option value="III">III</option>
+                    <option value="IV">IV</option>
+                </select>
+        </section>
+        <br><br>
+        <section>
+            <h3 style="text-decoration: underline;">Photo & Signature</h3><hr>
+                <fieldset>
+                    <legend>Upload</legend>
+                    <label for="file">Upload Photo : </label>
+                    <input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile1(event)" style="width: 20%; height: 25px; margin-left: 1%; margin-top: 1%;" required><br>
+                    <img id="output1" width="200" />
+                    <br>
+                    <label for="sign">Upload Signature : </label>
+                    <input type="file"  accept="image/*" name="image" id="sign"  onchange="loadFile2(event)" style="width: 20%; height: 25px; margin-left: 1%; margin-top: 1%;" required><br>
+                    <img id="output2" width="200" />
+                    
+                </fieldset>
+            </section>
+            <input type="submit" value="Submit"  onclick="getData()" style="border-color: white; margin-top: 2%; margin-left: 45%; width: 10%; height: 40px; background-color: lightcoral; border-radius: 8px; color: white; font-size: 1.2em; text-align: center; font-weight: bold; cursor: pointer;">
+        </form>
+        
+        <script>
+            var loadFile1 = function(event) {
+            var image1 = document.getElementById('output1');
+            image1.src = URL.createObjectURL(event.target.files[0]);
+            };
+            var loadFile2 = function(event) {
+            var image2 = document.getElementById('output2');
+            image2.src = URL.createObjectURL(event.target.files[0]);
+            };
+            
+            function getData()
+            {
+                var fname = document.getElementById("fname").value;
+                var mname = document.getElementById("mname").value;
+                var lname = document.getElementById("lname").value; 
+                var addr = document.getElementById("addr").value; 
+                var birthday = document.getElementById("birthday").value;
+                var email = document.getElementById("email").value;
+                var phone = document.getElementById("phone").value;
+                var pg = document.getElementById("pg").value;
+                var sm = document.getElementById("sm").value;
+                var file = document.getElementById("file").value;
+                var sign = document.getElementById("sign").value;
+                
+                localStorage.setItem("v1", fname);
+                localStorage.setItem("v2", mname);
+                localStorage.setItem("v3", lname);
+                localStorage.setItem("v4", addr);   
+                localStorage.setItem("v5", birthday); 
+                localStorage.setItem("v6", email); 
+                localStorage.setItem("v7", phone); 
+                localStorage.setItem("v8", pg); 
+                localStorage.setItem("v9", sm);
+                localStorage.setItem("v10", file); 
+                localStorage.setItem("v11", sign); 
+                
+                var gender = document.getElementsByName('gender');
+                for(i = 0; i < gender.length; i++) {
+                    if(gender[i].checked)
+                        localStorage.setItem("v12", gender[i].value); 
+                }
+            }
+        </script>
+    </body>
+</html>
